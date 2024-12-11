@@ -1,0 +1,499 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+body {
+  background-color: black;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.87);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.8px);
+  -webkit-backdrop-filter: blur(6.8px);
+  z-index: 100;
+}
+
+.head {
+  margin-left: 10px;
+  padding: 10px;
+  font-size: xx-large;
+}
+
+.dot {
+  color: red;
+  font-size: xxx-large;
+}
+
+nav {
+  padding: 10px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 500px;
+  justify-content: space-between;
+}
+
+nav a.active {
+  color: red;
+  font-weight: bold;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  header {
+    display: block;
+  }
+
+  .head {
+    font-size: x-large;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 20px;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  nav a {
+    padding: 12px 20px;
+    color: white;
+    text-align: left;
+    width: 100%;
+  }
+
+  nav a.active {
+    color: red;
+    font-weight: bold;
+  }
+
+  nav a:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .dot {
+    font-size: 2.5rem;
+    margin-left: 20px;
+  }
+}
+
+
+main {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-sec {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.text {
+  max-width: 50%;
+  margin-right: 30px;
+  line-height: 1.5;
+}
+
+.text h2 {
+  font: bold;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #cccccc;
+}
+
+.name {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.name span {
+  color: red; 
+}
+
+.location {
+  font-size: 1.5rem;
+  color: #cccccc;
+  margin-top: -20px;
+}
+
+.object{
+  max-width: 50%;
+  margin-left: 30px;
+}
+
+.rocket {
+  position: relative;
+  width: 60px;
+  height: 120px;
+  background: #e63946;
+  border-radius: 30px 30px 5px 5px;
+  margin: 0 auto;
+  animation: float 3s infinite ease-in-out;
+}
+
+.rocket .window {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.rocket .fin {
+  position: absolute;
+  width: 20px;
+  height: 40px;
+  background: #1d3557;
+  border-radius: 0 0 5px 5px;
+}
+
+.rocket .fin-left {
+  left: -15px;
+  top: 60%;
+  transform: skewX(-20deg);
+}
+
+.rocket .fin-right {
+  right: -15px;
+  top: 60%;
+  transform: skewX(20deg);
+}
+
+
+.rocket .flame {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  width: 20px;
+  height: 40px;
+  background: radial-gradient(circle, #ffcc00, #ff6f00, #ff0000);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  animation: flicker 0.2s infinite alternate;
+}
+
+.about-sec{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh;
+  text-align: center;
+  background: rgb(17, 24, 39);
+  margin-bottom: 80px;
+  font-size: 1.5rem;
+}
+.about-text{
+  max-width: 50%;
+  margin-bottom: 30px;
+}
+
+.about-para{
+  font-size: 1rem;
+  line-height: 1.5;
+  color: white;
+}
+
+.services-sec{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+.services-sec h2{
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px;
+}
+
+.card {
+  width: 300px;
+  height: 200px;
+  padding: 20px;
+  background: rgb(17, 24, 39);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.fas {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: red;
+}
+
+.card-text {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.card-subtext {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #d1d5db;
+}
+
+#Portfolio {
+  width: 100%;
+  padding: 80px 20px;
+  background-color: #1a202c;
+  text-align: center;
+}
+
+#Portfolio h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.project-card {
+  padding: 16px;
+  background-color: #2d3748;
+  border-radius: 12px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #cbd5e0;
+}
+
+#Hire-Me {
+  width: 100%;
+  padding: 80px 20px;
+  background-color: #000000;
+  text-align: center;
+}
+
+#Hire-Me h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+#Hire-Me p {
+  font-size: 1.25rem;
+  color: #d1d5db;
+  margin-bottom: 30px;
+}
+
+
+
+form input,
+form textarea {
+  display: inline-flex;
+  width: 100%; /* Full width of the parent container */
+  max-width: 900px; /* Prevents inputs from stretching too wide */
+  padding: 16px;
+  background-color: #2d3748;
+  border-radius: 8px;
+  border: none;
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  margin-bottom: 20px;
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+@media (max-width: 1024px) {
+  form input,
+  form textarea {
+    max-width: 700px; /* Adjust maximum width for smaller screens */
+    font-size: 0.95rem; /* Slightly smaller text size for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  form input,
+  form textarea {
+    max-width: 500px; /* Further reduce width for smaller screens */
+    font-size: 0.9rem; /* Smaller text for better spacing */
+    padding: 12px; /* Adjust padding to fit screen size */
+  }
+}
+
+@media (max-width: 480px) {
+  form input,
+  form textarea {
+    max-width: 100%; /* Full width on very small screens */
+    font-size: 0.85rem; /* Slightly smaller font for compact spaces */
+    padding: 10px; /* Reduce padding for smaller devices */
+  }
+}
+
+
+form input::placeholder,
+form textarea::placeholder {
+  color: #a0aec0;
+}
+
+form button {
+  padding: 16px 24px;
+  background-color: red;
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: rgb(170, 6, 6);
+}
+
+footer {
+  background-color: #1a202c;
+  padding: 20px 0;
+  text-align: center;
+  color: #a0aec0;
+  font-size: 0.875rem;
+  width: 100%;
+}
+
+
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  form input,
+form textarea{
+  flex-shrink: 1;
+}
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes flicker {
+  from {
+    transform: translateX(-50%) scaleY(0.9);
+    opacity: 0.8;
+  }
+  to {
+    transform: translateX(-50%) scaleY(1.1);
+    opacity: 1;
+  }
+}
+
+
